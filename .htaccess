@@ -1,0 +1,15 @@
+<IfModule mod_rewrite.c>
+
+# allow_override On
+# mod_rewrite is installed
+
+RewriteEngine on
+
+RewriteBase /ci3_hmvc_boilerplate/
+
+RewriteCond $1 !^(index.php|resources|robots.txt)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [L,QSA]
+
+</IfModule>
